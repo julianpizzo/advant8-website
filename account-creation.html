@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation - Advant8</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Account Creation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" >Dashboard</a></li>
+            <li><a href="account-creation.html"class="active"> Account Creation</a></li>
+            <li><a href="create-campaign.html">Create Campaign</a></li>
+            <li><a href="manage-payments.html">Manage Payments</a></li>
+            <li><a href="performance.html">Campaign Performance</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form id="account-creation-form">
+            <!-- Initial Registration -->
+            <div id="registration-step" class="form-step">
+                <h2>Initial Registration</h2>
+                <label for="company-name">Company Name:</label>
+                <input type="text" id="company-name"  placeholder="Enter company name">
+
+                <label for="contact-info">Contact Information:</label>
+                <input type="email" id="contact-info"  placeholder="Enter your email">
+
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number"  placeholder="Enter your phone number">
+
+                <button type="button" onclick="goToNextStep('profile-step')">Next</button>
+            </div>
+
+            <!-- Profile Completion -->
+            <div id="profile-step" class="form-step" style="display: none;">
+                <h2>Profile Completion</h2>
+                <label for="target-audience">Target Audience:</label>
+                <input type="text" id="target-audience"  placeholder="Enter target audience">
+
+                <label for="budget-allocations">Budget Allocations:</label>
+                <input type="number" id="budget-allocations"  placeholder="Enter budget" min="0">
+
+                <label for="brand-description">Brand Description:</label>
+                <textarea id="brand-description"  placeholder="Describe your brand"></textarea>
+
+                <button type="button" onclick="goToNextStep('onboarding-step')">Next</button>
+                <button type="button" onclick="goToPreviousStep('registration-step')">Back</button>
+            </div>
+
+            <!-- Onboarding Process -->
+            <div id="onboarding-step" class="form-step" style="display: none;">
+                <h2>Onboarding Process</h2>
+                <p>Your account is being processed. Please wait for confirmation from your Account Manager.</p>
+                <button type="button" onclick="activateAccount()">Finish</button>
+                <button type="button" onclick="goToPreviousStep('profile-step')">Back</button>
+            </div>
+
+            <!-- Activation Confirmation -->
+            <div id="activation-step" class="form-step" style="display: none;">
+                <h2>Account Activation</h2>
+                <p>Your account has been successfully activated! You can now access all features.</p>
+                <button type="button" onclick="resetForm()">Start Over</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Advant8 Campaign Management Platform</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Campaign - Advant8</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Advant8 Logo" class="logo">
+        <h1>Advant8 Campaign Management Platform</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="create-campaign.html" class="active">Create Campaign</a></li>
+            <li><a href="manage-payments.html">Manage Payments</a></li>
+            <li><a href="performance.html">Campaign Performance</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>New Campaign Details</h2>
+           <!-- Existing form elements -->
+           <form id="campaign-form">
+            <label for="company">Select Company:</label>
+            <select id="company" required>
+                <option value="" disabled selected>Select a company</option>
+                <option value="Apple">Apple</option>
+                <option value="Coca-Cola">Coca-Cola</option>
+                <option value="Nike">Nike</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="Amazon">Amazon</option>
+                <option value="Tesla">Tesla</option>
+                <option value="McDonald's">McDonald's</option>
+                <option value="Spotify">Spotify</option>
+                <option value="Red Bull">Red Bull</option>
+                <option value="H&M">H&M</option>
+            </select>
+        
+            <div id="company-info" style="display:none; margin-top: 10px;">
+                <img id="company-logo" src="" alt="Company Logo" style="max-width: 100px; margin-bottom: 10px;">
+                <p id="account-manager"></p>
+                <p id="target-audience"></p>
+                <input type="hidden" id="budget" required readonly>
+            </div>
+        
+            <label for="campaign-name">Campaign Name:</label>
+            <input type="text" id="campaign-name" required placeholder="Enter campaign name">
+        
+            <h3>Select Influencer</h3>
+            <div id="influencer-list">
+                <!-- Influencer cards will be generated here -->
+            </div>
+        
+            <button type="submit">Create Campaign</button>
+        </form>
+
+            
+
+            <div id="campaign-status"></div>
+
+            <h3>Your Campaigns</h3>
+            <div id="campaign-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Advant8 Campaign Management Platform</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
